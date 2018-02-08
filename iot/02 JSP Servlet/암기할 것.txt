@@ -1,0 +1,22 @@
+
+class 서블릿클래스이름   extends   HttpServlet  {
+
+    void doGet(HttpServletRequest    request,  
+                       HttpServletResponse response ){   
+        
+        request.setCharacterEncoding("UTF-8");
+        String value=request.getParameter("파라미터이름");   //<input  name=파라미터이름   />
+        
+        String values[] =request.getParameterValues("파라미터이름");   //<input  name=파라미터이름   />
+        
+
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out =   response.getWriter(); 
+        out.print("클라이언트에 전송 ");
+    } 
+
+    void doPost(HttpServletRequest    request,   
+                      HttpServletResponse  response ){  
+
+    } 
+} 

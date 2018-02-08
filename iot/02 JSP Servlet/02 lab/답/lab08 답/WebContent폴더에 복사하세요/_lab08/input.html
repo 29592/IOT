@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<form action="result.jsp"  >
+ 첫번째숫자 <input type="text" name="num1" size="2"/> 
+       <select name="operator">
+          <option>plus</option><!-- 이것을 선택하면 문자 "plus"이 "operator"의 파라미터 값으로 전달됩니다. -->
+          <option>subtract</option><!-- 이것을 선택하면 문자 "subtract"이 "operator"의 파라미터 값으로 전달됩니다. -->
+          <option>multiply</option><!-- 이것을 선택하면 문자 "multiply"이 "operator"의 파라미터 값으로 전달됩니다. -->
+          <option>divide</option><!-- 이것을 선택하면 문자 "divide"이 "operator"의 파라미터 값으로 전달됩니다. -->
+       </select>
+ 두번째숫자 <input type="text" name="num2" size="2"/> 
+<br/><br/> <input type="submit" value="계산"  > 
+</form>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Window>Preferences>Web>HTML Files>오른쪽창 Encoding 변경(utf-8로)
+Window>Preferences>Web>JSP Files>오른쪽창 Encoding 변경(utf-8로)

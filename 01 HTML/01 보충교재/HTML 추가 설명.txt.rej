@@ -1,0 +1,20 @@
+diff a/01 HTML/01 보충교재/HTML 추가 설명.txt b/01 HTML/01 보충교재/HTML 추가 설명.txt	(rejected hunks)
+@@ -0,0 +1,17 @@
++HTML�±� ��ҹ��� ���� ����. 
++�Ӽ����� " " �Ǵ� ' ' �Ǵ� �Ƚᵵ��
++
++<IMG src="a.png"> 
++<img src='a.png'> 
++<img src=a.png>  
++
++
++<img>       </img> 
++�����±�   �����±� 
++
++<img/>
++���۰� �������� �±� 
++
++���� �±״� �����±׸� �ᵵ�� 
++<br> <hr>
++<br/>    
+\ No newline at end of file

@@ -1,0 +1,12 @@
+웹컨텍스트패스  프로젝트명은 원래 다름. 
+이클립스가 동일하게 설정 자동으로 해줘서 우리가 지금까지 만든 
+프로젝트는 
+웹컨텍스트패스와  프로젝트명 동일 했던 것입니다. 
+
+http://localhost:8088/02JspServlet/
+
+다음 설정 파일에서 확인 가능 
+
+Servers > Tomcat conf> server.xml 
+    
+   <Context docBase="02jspServlet" path="/02jspServlet"  />

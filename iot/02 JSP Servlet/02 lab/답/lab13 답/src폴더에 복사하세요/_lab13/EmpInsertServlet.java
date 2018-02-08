@@ -26,10 +26,10 @@ public class EmpInsertServlet extends HttpServlet {
 		  String deptno 	= request.getParameter("deptno");
 		  
 		  EmpVO vo = new EmpVO();
-		  vo.setEmpNo (Integer.parseInt(empno));
+		  vo.setEmpNo (Integer.parseInt(empno)); //숫자
 		  vo.setEname (ename) ;
 		  vo.setJob (job) ;
-		  vo.setDeptNo(Integer.parseInt(deptno)) ;
+		  vo.setDeptNo(Integer.parseInt(deptno)) ;//숫자
 		  
 		  EmpDAO dao = new EmpDAO();
 		  dao.insertEmp(vo);

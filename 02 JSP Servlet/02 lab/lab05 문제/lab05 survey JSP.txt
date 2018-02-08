@@ -1,9 +1,0 @@
-WebContent/lab05 폴더에 survey.jsp을 복사하세요 
-
-1. 문제에 제공되는 survey.jsp에서 
-submit 버튼을 클릭하면 lab05.jsp 를 요청하게 
-수정하세요. 
-
-2.WebContent/lab05 폴더에 lab05.jsp을 다음과 같이 작성하세요
- 클라이언트가 전송한 모든 값을 
-클라이언트 브라우저에 출력하도록 작성합니다.  

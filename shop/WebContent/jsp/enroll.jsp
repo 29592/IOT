@@ -23,19 +23,19 @@
 </STYLE> 
 </head>
 <body onload="javascript:login.id.focus();">
-<h3> 쇼핑몰 로그인 폼 </h3>
+<h3> 쇼핑몰 상품등록 폼 </h3>
 <hr>
 
-<form name="login" method=post action=login.do>
+<form name="enroll" method=post action=enroll.do>
 <table>
 	<tr>
-		<td>아이디 :</td>
-		<td><input type=text name=id style="width:120px;" tabindex="1" value="admin01"></td>
+		<td>상품번호 :</td>
+		<td><input type=text name=prd_no style="width:120px;" tabindex="1" value="PRD000000013"></td>
 		<td rowspan="2"><input type=submit value=확인 tabindex="3"></td> 
 	</tr>
 	<tr>
-		<td>암 호 :</td>
-		<td><input type=password name=password style="width:120px;" tabindex="2" value="admin01"></td>
+		<td>상품이름 :</td>
+		<td><input type=text name=prd_nm style="width:120px;" tabindex="1" value="thony_kamela"></td>
 	</tr>	 
 	<tr>
 		<td colspan="3" height="50"><font color="red"><%= message%></td> 

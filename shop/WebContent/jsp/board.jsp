@@ -1,9 +1,3 @@
-<%
-    //history.go(-1)로 이동하는 경우에도, 페이지를 새로 읽는다. (No cache)
-	response.setHeader("Pragma", "No-cache");
-	response.setDateHeader("Expires",0);
-	response.setHeader("Cache-Control","no-Cache");
-%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ page import="java.util.*"%>
@@ -33,7 +27,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>:: 온라인 쇼핑몰</title>
+<title>:: 온라인 쇼핑몰 게시판</title>
 <STYLE TYPE="text/css"> 
 	td {font-family:   Times, 굴림체; font-size:11pt;} 
 </STYLE> 
@@ -49,55 +43,22 @@
 		<td width="100" align="right">
 		<%if(isLogin) { %>
 		    <a href=logout.do>Log-Out</a>
-		    <%if("ADM".equals(memCd)) { %>
-		    	<a href=enrollform.do>상품등록</a>
-	    	<%} %>
 		<%} else { %>
 			<a href=loginform.do>Log-In</a>
 		<%} %>
 		</td>
-		<td width="100"><a href=board.do>게시판</a></td>
+		<td width="100"><a href=list.do>상품 목록</a></td>
 		<td width="100"><a href=basketview.do>장바구니 보기</a></td>
 	</tr>
 </table>
 
 
-<h3>상품 목록보기</h3>
 
 
 <table width=800 border=0>
 
 	<tr>
-		<td width=140 valign=top><b>category</b><br><br>
-		<a href=list.do>전체보기</a><br><br>
-		<%
-			String categoryCode = request.getParameter("categoryCode");
-			String goodsName = request.getParameter("goodsName");
-			String startPrice = request.getParameter("startPrice");
-			String endPrice = request.getParameter("endPrice");
-
-			ArrayList categoryList = (ArrayList) request.getAttribute("categoryList");
-			for (int i = 0; i < categoryList.size(); i++) {
-				CategoryVO cvo = (CategoryVO) categoryList.get(i);
-				String param = "categoryCode=" + cvo.getCategoryNo();
-
-				if (goodsName != null) {
-					param = param + "&goodsName="
-							+ HttpUtil.encoding(goodsName);
-				}
-
-				if (startPrice != null) {
-					param = param + "&startPrice=" + startPrice;
-				}
-
-				if (endPrice != null) {
-					param = param + "&endPrice=" + endPrice;
-				}
-		%> <a href=list.do?<%=param %>><%=cvo.getCategoryNm()%></a><br><br>
-		<%
-			} // for
-		%>
-		</td>
+		
 		<td width=660 valign="top">
 
 		<table border=0 width=660>

@@ -153,13 +153,40 @@ public class ProductDAO extends AbDao {
 		return list;
 	} // getGoodsList
 	
+	public int setGoods(String goodsCode, String goodsName){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try{
+			conn = connect();
+			
+			StringBuffer query = new StringBuffer();
+			query.append("insert into tb_product (prd_no, prd_nm, CATEGORY_NO, REG_DTM ) " + 
+					"values (?,?, 'CAT000000001', to_char(sysdate,'YYYYMMDDHH24MISS'))"); 		
+			ps = conn.prepareStatement( query.toString() ); 
+			ps.setString(1, goodsCode);
+			ps.setString(2, goodsName);
+			rs = ps.executeQuery();
+			close(conn, ps, rs);
+			return 0;	
+			
+		}catch(Exception ex){
+			System.out.println("setGoods exception : " + ex);
+			close(conn, ps, rs);
+			return 1;	
+		}
+				
+	}
+	
+	
 	public static void main(String args[]){
 		ProductDAO dao = ProductDAO.getInstance();
-		ArrayList<ProductVO> list = dao.getGoodsList("CAT000000003");
+		/*ArrayList<ProductVO> list = dao.getGoodsList("CAT000000003");
 		Iterator<ProductVO> iter = list.iterator();
 		while (iter.hasNext()) {
 			Object tmp = (Object) iter.next();
 			System.out.println(tmp);
-		}
+		}*/
+		System.out.println(dao.setGoods("2qe", "qwe"));
 	}
 }

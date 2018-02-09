@@ -1,0 +1,45 @@
+<project name="shopweb" default="all" basedir=".">
+
+	<property file="build.properties" />
+
+	<!-- set path -->
+	<path id="project.class.path">
+		<fileset dir="${tomcat.home}/common/lib/">
+			<include name="*.jar" />
+		</fileset> 
+	</path>
+
+	<!-- ready to build (ejb deploy descriptor copy) -->
+	<target name="init">
+		<mkdir dir="${build}"/>
+	</target>
+
+	<!-- compile java files -->
+	<target name="compile" depends="init">
+
+		<javac srcdir="${source}" destdir="${build}" includes="**/*.*">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<!-- packaging -->
+	<target name="war" depends="compile">
+		<jar jarfile="${root}/${web-war}.war">
+			<fileset dir="${root}/WebContent/">
+				<include name="**/*.*" />
+			</fileset>
+		</jar>
+	</target>
+
+    <target name="dist" depends="war"> 
+		<copy todir="${tomcat.webapps}" overwrite="true">
+			<fileset dir="${root}">
+				<include name="${web-war}.war" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="all" depends="dist">
+	</target>
+
+</project>
